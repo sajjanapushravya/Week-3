@@ -1,0 +1,103 @@
+========== First 5 Rows ==========
+  label                                            message
+0   ham  Go until jurong point, crazy.. Available only ...
+1   ham                      Ok lar... Joking wif u oni...
+2  spam  Free entry in 2 a wkly comp to win FA Cup fina...
+3   ham  U dun say so early hor... U c already then say...
+4   ham  Nah I don't think he goes to usf, he lives aro...
+
+========== Dataset Info ==========
+<class 'pandas.DataFrame'>
+RangeIndex: 5572 entries, 0 to 5571
+Data columns (total 2 columns):
+ #   Column   Non-Null Count  Dtype
+---  ------   --------------  -----
+ 0   label    5572 non-null   str  
+ 1   message  5572 non-null   str  
+dtypes: str(2)
+memory usage: 87.2 KB
+
+========== Missing Values ==========
+label      0
+message    0
+dtype: int64
+
+========== Spam / Ham Count ==========
+label
+ham     4825
+spam     747
+Name: count, dtype: int64
+
+========== Dataset Shape ==========
+(5572, 2)
+
+========== Original vs Cleaned Messages ==========
+Original : Go until jurong point, crazy.. Available only in bugis n great world la e buffet... Cine there got amore wat...
+Cleaned  : go until jurong point crazy available only in bugis n great world la e buffet cine there got amore wat
+
+Original : Ok lar... Joking wif u oni...
+Cleaned  : ok lar joking wif u oni
+
+Original : Free entry in 2 a wkly comp to win FA Cup final tkts 21st May 2005. Text FA to 87121 to receive entry question(std txt rate)T&C's apply 08452810075over18's
+Cleaned  : free entry in a wkly comp to win fa cup final tkts st may text fa to to receive entry questionstd txt ratetcs apply overs
+
+Original : U dun say so early hor... U c already then say...
+Cleaned  : u dun say so early hor u c already then say
+
+Original : Nah I don't think he goes to usf, he lives around here though
+Cleaned  : nah i dont think he goes to usf he lives around here though
+
+
+========== TF-IDF ==========
+Number of messages: 5572
+Number of features: 8603
+
+========== Train-Test Split ==========
+Training messages: 4457
+Testing messages : 1115
+
+========== Model Training ==========
+Naive Bayes model trained successfully!
+
+========== Predictions ==========
+Actual: ham | Predicted: ham
+Actual: ham | Predicted: ham
+Actual: ham | Predicted: ham
+Actual: ham | Predicted: ham
+Actual: ham | Predicted: ham
+Actual: ham | Predicted: ham
+Actual: ham | Predicted: ham
+Actual: ham | Predicted: ham
+Actual: ham | Predicted: ham
+Actual: ham | Predicted: ham
+
+========== Evaluation ==========
+Accuracy: 0.957847533632287
+
+========== Classification Report ==========
+              precision    recall  f1-score   support
+
+         ham       0.95      1.00      0.98       966
+        spam       1.00      0.68      0.81       149
+
+    accuracy                           0.96      1115
+   macro avg       0.98      0.84      0.89      1115
+weighted avg       0.96      0.96      0.95      1115
+
+
+========== Confusion Matrix ==========
+[[966   0]
+ [ 47 102]]
+
+========== Custom Message Predictions ==========
+Message: Congratulations! You won a free prize. Call now!
+Prediction: SPAM
+
+Message: Hey, are you coming to college today?
+Prediction: HAM
+
+Message: You have won 1000 dollars. Click the link to claim.
+Prediction: SPAM
+
+Message: Can you call me when you reach home?
+Prediction: HAM
